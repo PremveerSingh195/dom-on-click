@@ -1,27 +1,28 @@
 class products {
-    // name;
-    // price;
-    // discription;
-
-constructor(n,p,d){
-    console.log("hello world");
-    this.name = n;
-    this.price = p;
-    this.discription = d;
-}   
-
-    display (){
-        console.log(this);
+    #rating;
+ constructor (n , p , r){
+      this.name = n;
+      this.price = p;
+      this.#rating = r;
     }
+
+   ratingsetter (r){
+      if (r < 0) return;
+      this.#rating = r
+  }
+
+  ratinggetter (){
+    console.log(this.#rating);
+  }
+
+
 }
+const p = new products("iphone" , 10000 , 5);
 
-const p = new products("iphone", 10000 , "apple");
+p.ratingsetter(10)
 
-const d = new products("galaxy" , 1000 , "samsung")
+p.ratinggetter()
 
 
 console.log(p);
 
-console.log(d);
-p.display()
-d.display()
